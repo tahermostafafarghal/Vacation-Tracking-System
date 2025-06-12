@@ -221,3 +221,84 @@ Function withdrawLeaveRequest:
 ![Manage Time and approval request Sequence diagram](./Sequence_Diagram/Sequance_Diagram_System.png)
 
 </details>
+
+---
+## 📝 Future status: HR_Pending and HR_Approval
+<details>
+<summary> <strong>🧾 State Machine Diagram </strong> </summary>
+
+![Manage Time and approval request State Machine Diagram](./State_Machine_Diagram/State_machine_diagram.png)
+</details>
+
+<details>
+<summary> <strong>📜 Pseudocode: Manage Time with approval HR request </strong></summary>
+
+```pseudocode
+Start:
+  employeeLogin()
+
+  if employeeLogin == true then
+      createLeaveRequest()
+  else
+      showError("Login Failed")
+  end if
+
+--------------------------------------------------------
+
+Function createLeaveRequest:
+  selectLeaveCategory()
+  inputVacationDate()
+  inputVacationTime()
+
+  if checkValidation() == true then
+      addRequestToDatabase()
+      sendRequestToManager()
+  else
+      showError("Validation Failed")
+  end if
+
+--------------------------------------------------------
+
+Function checkValidation:
+  if vacationTime > employeeBalanceForCategory then
+      return false
+
+  if vacationDate is in DaysCannotLeave then
+      return false
+
+  if not isEmployeeAvailable(vacationDate) then
+      return false
+
+  return true
+
+--------------------------------------------------------
+
+Function addRequestToDatabase:
+  requestId = generateNewId()
+  status = "Pending Manager"
+  saveRequest(requestId, employeeId, category, date, time, status)
+
+--------------------------------------------------------
+
+Function sendRequestToManager:
+  send JSON request to Manager with leave data
+
+  if manager responds with "approve" then
+      updateRequestStatus(requestId, "Approved by Manager - Pending HR")
+      sendRequestToHR()
+
+  else if manager responds with "reject" then
+      updateRequestStatus(requestId, "Rejected by Manager")
+
+--------------------------------------------------------
+
+Function sendRequestToHR:
+  send JSON request to HR with leave data
+
+  if HR responds with "approve" then
+      updateRequestStatus(requestId, "Approved by HR (Final Approval)")
+
+  else if HR responds with "reject" then
+      updateRequestStatus(requestId, "Rejected by HR")
+```
+</details>
