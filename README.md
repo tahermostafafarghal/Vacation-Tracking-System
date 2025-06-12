@@ -227,7 +227,7 @@ Function withdrawLeaveRequest:
 <details>
 <summary> <strong>🧾 State Machine Diagram </strong> </summary>
 
-![Manage Time and approval request State Machine Diagram](./State_Machine_Diagram/State_machine_diagram.png)
+![Manage Time and approval request State Machine Diagram](./State_Machine_Diagram/State_Machine_Diagram.png)
 </details>
 
 <details>
