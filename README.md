@@ -97,6 +97,12 @@ As work environments evolve and employees are distributed across different teams
 > Allow employees to create, modify, or withdraw leave requests in a policy-compliant and user-friendly manner.
 
 ### 🔄 Create Request
+The employee selects the leave category, specifies the desired date and duration, and the system validates the request against available balance and company policies. If valid, the request is sent to the manager for approval.
+
+## 🧾 Flowchart Create Leave Request:
+
+<details>
+<summary>📜 Pseudocode: Create Leave Request</summary>
 
 ```pseudocode
 Start:
@@ -124,3 +130,81 @@ Function checkValidation:
   if vacationDate is in DaysCannotLeave then return false
   if not isEmployeeAvailable(vacationDate) then return false
   return true
+```
+</details>
+
+---
+### ✏️ Edit
+The employee can modify a pending leave request that has not yet been reviewed by the manager. After editing, the request is resubmitted to the manager for re-evaluation and approval or rejection.
+
+## 🧾 Flowchart Edit Leave Request:
+
+<details>
+<summary>📜 Pseudocode: Edit Leave Request</summary>
+
+```pseudocode
+Start:
+  employeeLogin()
+
+  if employeeLogin == true then
+      editLeaveRequest()
+  else
+      showError("Login Failed")
+  end if
+
+--------------------------------------------------------
+
+Function editLeaveRequest:
+  selectLeaveRequestToEdit()
+  updateVacationDate()
+  updateVacationTime()
+  updateLeaveCategory()
+
+  if checkValidation() == true then
+      saveUpdatedRequest()
+      notifyManager("Request Updated")
+  else
+      showError("Validation Failed")
+  end if
+```
+</details>
+
+---
+
+### ❌ Withdraw
+If the leave request is still pending, the employee can withdraw it directly without manager approval. If the request has already been approved, HR intervention may be required to process the withdrawal.
+
+## 🧾 Flowchart Withdraw Leave Request:
+
+<details>
+<summary>📜 Pseudocode: Withdraw Leave Request</summary>
+
+```pseudocode
+Start:
+  employeeLogin()
+
+  if employeeLogin == true then
+      withdrawLeaveRequest()
+  else
+      showError("Login Failed")
+  end if
+
+--------------------------------------------------------
+
+Function withdrawLeaveRequest:
+  selectRequestToWithdraw()
+
+  if requestStatus == "pending" or requestStatus == "approved" then
+      deleteLeaveRequest()
+      notifyManager("Request Withdrawn")
+  else
+      showError("Cannot withdraw this request")
+  end if
+```
+</details>
+
+---
+### 🖥️ Manage Time and approval request Sequence
+
+
+
