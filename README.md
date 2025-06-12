@@ -130,7 +130,7 @@ Function createLeaveRequest:
 Function checkValidation:
   if vacationTime > employeeBalanceForCategory then return false
   if vacationDate is in DaysCannotLeave then return false
-  if not isEmployeeAvailable(vacationDate) then return false
+  if EmployeeAvailable(vacationDate) return false then return false
   return true
 ```
 </details>
@@ -141,7 +141,8 @@ The employee can modify a pending leave request that has not yet been reviewed b
 <details>
 <summary> <strong> 🧾 Flowchart Edit Leave Request: </strong> </summary>
 
-![Flowchart Edit Leave Request](./Flow_Chart/VTS_Edit_Request.png)
+![Flowchart Edit Leave Request](./Flow_Chart/VTS_Edit_Requested.png)
+
 </details>
 <details>
 <summary> <strong> 📜 Pseudocode: Edit Leave Request</strong> </summary>
