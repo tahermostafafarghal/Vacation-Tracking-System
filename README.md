@@ -98,11 +98,13 @@ As work environments evolve and employees are distributed across different teams
 
 ### 🔄 Create Request
 The employee selects the leave category, specifies the desired date and duration, and the system validates the request against available balance and company policies. If valid, the request is sent to the manager for approval.
-
-## 🧾 Flowchart Create Leave Request:
-
 <details>
-<summary>📜 Pseudocode: Create Leave Request</summary>
+<summary> <strong> 🧾 Flowchart Create Leave Request: </strong> </summary>
+
+![Flowchart Create Leave Request](./Flow_Chart/VTS-Creat_Request.png)
+</details>
+<details>
+<summary> <strong>📜 Pseudocode: Create Leave Request</strong> </summary>
 
 ```pseudocode
 Start:
@@ -136,11 +138,14 @@ Function checkValidation:
 ---
 ### ✏️ Edit
 The employee can modify a pending leave request that has not yet been reviewed by the manager. After editing, the request is resubmitted to the manager for re-evaluation and approval or rejection.
-
-## 🧾 Flowchart Edit Leave Request:
-
 <details>
-<summary>📜 Pseudocode: Edit Leave Request</summary>
+<summary> <strong> 🧾 Flowchart Edit Leave Request: </strong> </summary>
+
+![Flowchart Edit Leave Request](./Flow_Chart/VTS_Edit_Request.png)
+</details>
+<details>
+<summary> <strong> 📜 Pseudocode: Edit Leave Request</strong> </summary>
+
 
 ```pseudocode
 Start:
@@ -174,10 +179,14 @@ Function editLeaveRequest:
 ### ❌ Withdraw
 If the leave request is still pending, the employee can withdraw it directly without manager approval. If the request has already been approved, HR intervention may be required to process the withdrawal.
 
-## 🧾 Flowchart Withdraw Leave Request:
+<details>
+<summary> <strong>🧾 Flowchart Withdraw Leave Request: </strong></summary>
+
+![Flowchart Withdraw Leave Request](./Flow_Chart/VTS-Withdraw_Request.png)
+</details>
 
 <details>
-<summary>📜 Pseudocode: Withdraw Leave Request</summary>
+<summary> <strong>📜 Pseudocode: Withdraw Leave Request </strong></summary>
 
 ```pseudocode
 Start:
@@ -204,7 +213,10 @@ Function withdrawLeaveRequest:
 </details>
 
 ---
-### 🖥️ Manage Time and approval request Sequence
+<details>
+<summary> <strong> 🖥️ Manage Time and approval request Sequence diagram </strong></summary>
 
 
+![Manage Time and approval request Sequence diagram](./Sequence_Diagram/Sequance_Diagram_System.png)
 
+</details>
