@@ -215,6 +215,14 @@ Function withdrawLeaveRequest:
 
 ---
 <details>
+<summary> <strong> 👤 User Interface Pages from employee actor view </strong></summary>
+  
+![User Interface Pages from employee actor view](./UserInterface/UI_VTS_Pages.png)
+</details>
+
+---
+
+<details>
 <summary> <strong> 🖥️ Manage Time and approval request Sequence diagram </strong></summary>
 
 
